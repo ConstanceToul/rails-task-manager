@@ -1,0 +1,11 @@
+<h1>Voici la liste des Tasks : </h1>
+
+  <% @tasks.each do |task| %>
+    <h2> <%= task.title %> </h2>
+    <p> <%= task.description %> </p>
+    <p> <%= task.difficulty %> </p>
+    <p> <%= task.done %> </p>
+    <p> <%= link_to "Voir la tache", task_path(task) %> </p>
+    <p> <%= link_to "Supprimer la tache", task_path(task), method: :delete %> </p>
+    <p> <%= link_to "Editer la tache", edit_task_path(task) %> </p>
+  <% end %>
